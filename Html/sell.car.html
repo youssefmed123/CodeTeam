@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Car</title>
+    <link rel="stylesheet" href="../css/SellCar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="/" aria-label="Car Marketplace Home">
+                <img src="../Photos/LogoWeb.jpg" alt="Car Marketplace Logo">
+                <div class="logo-text">CAR4U</div>
+            </a>
+        </div>
+    </header>
+    
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="MainPage.html" aria-current="page">Home</a></li>
+            <li><a href="new_cars.html">New Cars</a></li>
+            <li><a href="used_cars.html">Used Cars</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+        <div class="nav-icons">
+            <a href="https://facebook.com" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="form-container">
+            <h2>Enter Car Details</h2>
+            <form action="#" method="post">
+                <label for="brand">Brand:</label>
+                <input type="text" id="brand" name="brand" placeholder="Enter car brand" required>
+
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" placeholder="Enter car model" required>
+
+                <label for="year">Year:</label>
+                <input type="number" id="year" name="year" min="1900" max="2025" required>
+
+                <label for="price">Price (USD):</label>
+                <input type="number" id="price" name="price" placeholder="Enter price" required>
+
+                <label for="mileage">Mileage (km):</label>
+                <input type="number" id="mileage" name="mileage" placeholder="Enter mileage" required>
+
+                <label for="condition">Condition:</label>
+                <select id="condition" name="condition" required>
+                    <option value="new">New</option>
+                    <option value="used">Used</option>
+                </select>
+
+                <label for="carImage">Upload Car Image:</label>
+                <input type="file" id="carImage" name="carImage" accept="image/*" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>

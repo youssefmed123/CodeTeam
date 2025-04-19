@@ -1,0 +1,83 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Black background */
+    color: white; /* White text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #b71c1c; /* Dark red background */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Main Section */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form Container */
+.form-container {
+    background: #2e2e2e; /* Dark gray background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Red glow effect */
+    width: 400px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label Styling */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #ff4d4d; /* Light red text */
+}
+
+/* Input and Select Styling */
+input, select {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ff1a1a; /* Red border */
+    border-radius: 5px;
+    width: 100%;
+    background: #1a1a1a; /* Black background */
+    color: white; /* White text */
+}
+
+/* Submit Button */
+button {
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #e60000; /* Dark red button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ff3333; /* Light red on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-container {
+        width: 90%;
+    }
+}

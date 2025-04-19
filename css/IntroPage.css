@@ -1,0 +1,334 @@
+ /* تعميم التنسيق الأساسي */ body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #000000;}
+ /* 🔹 Navigation Bar Styles */
+nav {
+    background-color: #582929;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #6e3b3b;
+}
+/* 🔹 تنسيق الأيقونات داخل النافبار */
+.nav-icons {
+    
+     margin-top: 20px;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+}
+
+
+ /* 🔹 ضبط الأيقونات أعلى يمين النافبار */
+.nav-icons {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+    
+}
+
+/* 🔹 شكل الأيقونات */
+.nav-icons a i {
+    color: rgb(9, 5, 5);
+    font-size: 20px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* 🔹 تأثير عند المرور */
+.nav-icons a:hover i {
+    color: #ffd700; /* لون ذهبي عند الهوفر */
+    transform: scale(1.2);
+}
+
+/* 🔹 تجاوب على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .nav-icons {
+        position: static;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #010101;
+    padding:50px;
+    height:350px;
+}
+
+/* النصوص داخل الهيدر */
+.header-content {
+    max-width: 50%;
+    color: rgb(121, 7, 7);
+    margin-left:200px;
+    margin-top: 70px;
+}
+
+.header-content h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight:bold;
+    margin-left: 20px;
+    
+}
+
+.header-content p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-right: 130px;
+    color: rgb(246, 248, 249);
+    
+}
+
+/* زرار "استكشف الآن" */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2e2c2c;
+    color: rgb(121, 7, 7);
+    text-decoration: none;
+    font-size: 25px;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #4b1b09;
+}
+
+/* صورة الهيدر */
+.header-image img {
+    width:100%;
+    height:auto; 
+    padding-right:550px;
+} 
+.logo {
+    position: absolute;
+    top: 10px;  /* المسافة من الأعلى */
+    left: 10px; /* المسافة من اليسار */
+    font-size: 35px; /* حجم الخط */
+    font-weight: bold;
+    color: white; /* اللون الأساسي */
+    font-family: 'Arial', sans-serif;
+     
+}
+
+.logo span {
+    color: #ad271e; /* لون مختلف لـ 4U */
+    font-weight: bold;
+     
+}
+
+.logo:hover {
+    transform: scale(1.1); /* تكبير بسيط عند المرور */
+    transition: 0.3s ease;
+} 
+ 
+
+ 
+  /* 🔹 "Why Choose Us?" Section */
+.why-choose-us {
+    text-align: center;
+    padding: 50px 20px;
+    background-color:#582929;
+  
+}
+
+.why-choose-us h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 70px;
+     
+}
+
+/* 🔹 ترتيب الصناديق في سطر واحد */
+.features-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    flex-wrap: wrap; /* لو الشاشة صغيرة، ينزل الصناديق تحت بعض */
+}
+
+/* 🔹 تحسين تصميم كل صندوق */
+.feature-box {
+    background: rgb(42, 39, 39);
+    padding: 20px;
+    border-radius: 10px;
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*/
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start; /*يوزع المحتوى بالتساوي داخل الصندوق */
+    height: 250px; /* يخلي كل الصناديق بنفس الطول */
+     
+}
+
+
+/* 🔹 التأثير عند التحويل */
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+/* 🔹 تنسيق الأيقونات داخل الصناديق */
+.feature-box img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.feature-box h3 {
+    font-size: 1.6rem;
+    color:  #692121;
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 1.1rem;
+    color:white;
+    
+}
+/* 🔹 "Most Popular & Best-Selling Cars" Section */
+.popular-cars {
+    text-align: center;
+    padding: 50px 20px;
+    
+}
+
+.popular-cars h2 {
+    font-size: 2.5rem;
+    color:white;
+    /*margin-bottom: 20px;*/
+    padding: 20px;
+}
+
+/* 🔹 ترتيب الصناديق بطريقة صحيحة بدون مشاكل */
+.cars-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* يجعل كل صف يحتوي على 3 صناديق */
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    align-items: stretch; /* يجعل جميع الصناديق بنفس الطول */
+}
+
+/* 🔹 ضبط تصميم كل صندوق */
+.car-box {
+    background:#582929;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:290px; /* يخلي كل الصناديق بنفس الطول */
+}
+
+/* 🔹 التأثير عند التحويل */
+.car-box:hover {
+    transform: translateY(-5px);
+}
+
+/* 🔹 تحسين تنسيق الصور */
+.car-box img {
+    width: 100%;
+    max-width: 250px;
+    height: 190px;
+    border-radius: 10px;
+    margin-bottom: 0px;
+     
+    
+}
+
+.car-box h3 {
+    font-size: 1.1rem;
+    color:  rgb(15, 14, 14);
+    margin-bottom: 0px;
+    font-weight: bold;
+     
+}
+
+.car-box p {
+    font-size: 1.1rem;
+    color: rgb(15, 14, 14);
+    font-weight:bold;
+    margin-bottom:0px;
+    
+}
+
+.car-box .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+     
+     
+}
+  .car_info{
+    height: 100px;
+     
+    
+  }
+
+/* 🔹 تحسين التجاوب على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-box {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .cars-container {
+        grid-template-columns: repeat(2, 1fr); /* خلي السيارات في صفين بدل 3 في الشاشات الصغيرة */
+    }
+}
+
+@media (max-width: 480px) {
+    .cars-container {
+        grid-template-columns: repeat(1, 1fr); /* سيارة واحدة في كل صف على الشاشات الصغيرة جدًا */
+    }
+}
+ /* الفوتر */ .footer { background-color:rgb(60, 22, 22); color: rgb(8, 8, 8); text-align: center; padding: 15px; margin-top: 20px;font-weight:bold;font-size: 20px; }

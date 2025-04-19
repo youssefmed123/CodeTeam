@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+    color: #fff;
+  }
+  
+  header {
+    background-color: #b30000;
+    text-align: center;
+    padding: 20px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+  }
+  
+  .car {
+    background-color: #1c1c1c;
+    border: 1px solid #444;
+    border-radius: 12px;
+    margin: 20px 0;
+    padding: 20px;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .car:hover {
+    transform: scale(1.02);
+  }
+  
+  .car img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .car h2 {
+    color: #e60000;
+    margin-bottom: 5px;
+  }
+  
+  .car p {
+    color: #ccc;
+  }

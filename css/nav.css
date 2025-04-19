@@ -1,0 +1,160 @@
+/* Navigation Bar Styles */
+.main-nav {
+    background-color: rgb(121, 7, 7);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    position: relative;
+    height: 70px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main-nav li {
+    position: relative;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: #cc0000;
+    color: #ffffff;
+}
+
+.main-nav a[aria-current="page"] {
+    background-color: #cc0000;
+    color: #ffffff;
+}
+
+/* Logo Styles */
+.logo-container {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.logo-container img {
+    width: auto;
+    height: 40px;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+.logo-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.logo-container:hover img {
+    opacity: 0;
+}
+
+.logo-container:hover .logo-text {
+    opacity: 1;
+}
+
+/* Nav Icons */
+.nav-icons {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 2;
+}
+
+.nav-icons a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.nav-icons a:hover {
+    color: #cc0000;
+    background-color: white;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        padding: 1rem;
+        height: auto;
+        min-height: 70px;
+    }
+
+    .main-nav ul {
+        position: relative;
+        left: 0;
+        transform: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin: 4rem 0 1rem 0;
+    }
+
+    .logo-container {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-icons {
+        position: relative;
+        right: 0;
+        top: 0;
+        transform: none;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}
+
+/* Active State Animation */
+.main-nav a[aria-current="page"]::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background-color: #cc0000;
+    border-radius: 2px;
+} 

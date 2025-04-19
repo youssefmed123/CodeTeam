@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes Cars</title>
+    <link rel="stylesheet" href="../css/MercedesBenz.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="logo-container">
+            <img src="../Photos/LogoWeb.jpg" alt="CAR4U Logo">
+            <span class="logo-text">CAR4U</span>
+        </div>
+        <ul>
+            <li><a href="MainPage.html">Home</a></li>
+            <li><a href="used_cars.html">Used Cars</a></li>
+            <li><a href="new_cars.html">New Cars</a></li>
+            <li><a href="sell.car.html">Sell Your Car</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+        <div class="nav-icons">
+            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Sort By</h2>
+            <div class="category">
+                <h3>Name</h3>
+                <button class="sort-btn" onclick="sortByName()">A to Z</button>
+            </div>
+            <div class="category">
+                <h3>Price</h3>
+                <button class="sort-btn" onclick="sortByPrice('asc')">Low to High</button>
+                <button class="sort-btn" onclick="sortByPrice('desc')">High to Low</button>
+            </div>
+            <div class="category">
+                <h3>Year</h3>
+                <button class="sort-btn" onclick="sortByYear('asc')">Oldest First</button>
+                <button class="sort-btn" onclick="sortByYear('desc')">Newest First</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <div class="box" data-name="Mercedes S-Class" data-price="3820000" data-year="2014">
+                    <div class="img-container">
+                        <img src="https://postcdn.haraj.com.sa/userfiles30/2025-04-02/1600x1044_110EC8A4-FAFD-4BD7-95DE-FF6E0F32EB5C.jpg/900/webp" alt="Mercedes S-Class" class="img">
+                    </div>
+                    <p class="name">Mercedes S-Class S400 2014</p>
+                    <p class="price">3,820,000 EGP</p>
+                    <button class="view-btn" onclick="openPage('./Mercedes3')">View</button>
+                </div>
+
+                <div class="box" data-name="Mercedes C-Class" data-price="2800000" data-year="2024">
+                    <div class="img-container">
+                        <img src="https://postcdn.haraj.com.sa/userfiles30/2025-04-01/1179x777_57DD0FD6-A918-4D0C-84DE-30660DF5385A.jpg/900/webp" alt="Mercedes C-Class" class="img">
+                    </div>
+                    <p class="name">Mercedes C200 2024</p>
+                    <p class="price">2,800,000 EGP</p>
+                    <button class="view-btn" onclick="openPage('./Mercedes1')">View</button>
+                </div>
+
+                <div class="box" data-name="Mercedes A-Class" data-price="1660000" data-year="2019">
+                    <div class="img-container">
+                        <img src="https://images.dubizzle.com.eg/thumbnails/132980303-800x600.webp" alt="Mercedes A-Class" class="img">
+                    </div>
+                    <p class="name">Mercedes A180 2019</p>
+                    <p class="price">1,660,000 EGP</p>
+                    <button class="view-btn" onclick="openPage('./Mercedes2')">View</button>
+                </div>
+
+                <div class="box" data-name="Mercedes GLE" data-price="2100000" data-year="2016">
+                    <div class="img-container">
+                        <img src="https://postcdn.haraj.com.sa/userfiles30/2025-03-27/1179x872_BBACE0B0-E106-41D4-9042-EC5ACA3E2F9D.jpg/900/webp" alt="Mercedes GLE" class="img">
+                    </div>
+                    <p class="name">Mercedes GLE 350 2016</p>
+                    <p class="price">2,100,000 EGP</p>
+                    <button class="view-btn" onclick="openPage('./Mercedes 4')">View</button>
+                </div>
+
+                <div class="box" data-name="Mercedes GLS" data-price="3850000" data-year="2021">
+                    <div class="img-container">
+                        <img src="https://postcdn.haraj.com.sa/userfiles30/2025-03-28/900x675-1_-GO__MTc0MzIwNTAyODMzNDg0ODQ5MjQ1Nw.jpg/900/webp" alt="Mercedes GLS" class="img">
+                    </div>
+                    <p class="name">Mercedes GLS 450 2021</p>
+                    <p class="price">3,850,000 EGP</p>
+                    <button class="view-btn" onclick="openPage('./Mercedes 5')">View</button>
+                </div>
+
+                <div class="box" data-name="Mercedes E-Class" data-price="2650000" data-year="2019">
+                    <div class="img-container">
+                        <img src="https://postcdn.haraj.com.sa/userfiles30/2025-04-01/1124x840_DEE5D5B5-6AA7-4BF9-A6DF-D90CA2F3876B.jpg/900/webp" alt="Mercedes E-Class" class="img">
+                    </div>
+                    <p class="name">Mercedes E300 2019</p>
+                    <p class="price">2,650,000 EGP</p>
+                    <button class="view-btn" onclick="openPage('./Mercedes 6')">View</button>
+                </div>
+
+                <div class="box" data-name="Mercedes GLA" data-price="1865000" data-year="2023">
+                    <div class="img-container">
+                        <img src="https://postcdn.haraj.com.sa/userfiles30/2025-03-21/1280x960_810A3855-1775-43F8-8F02-E8C1D7DC2E6C.jpg/900/webp" alt="Mercedes GLA" class="img">
+                    </div>
+                    <p class="name">Mercedes GLA 200 2023</p>
+                    <p class="price">1,865,000 EGP</p>
+                    <button class="view-btn" onclick="openPage('./Mercedes 7')">View</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../Javascript/MercedesBenz.js"></script>
+</body>
+</html>

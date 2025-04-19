@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-red: #a71111;
+    --dark-red: #8a0e0e;
+    --light-red: #c01414;
+    --dark-bg: #0a0a0a;
+    --light-bg: #1a1a1a;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.page-container {
+    display: flex;
+    min-height: 100vh;
+    margin-top: 70px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    background-color: var(--primary-red);
+    padding: 25px;
+    position: fixed;
+    height: calc(100vh - 70px);
+    left: 0;
+    top: 70px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow);
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    color: var(--text-light);
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.category {
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.category h3 {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sort-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--text-light);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    text-align: left;
+}
+
+.sort-btn:hover {
+    background-color: var(--dark-red);
+    transform: translateX(5px);
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 280px;
+    padding: 30px;
+    flex: 1;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    justify-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.box {
+    background-color: var(--light-bg);
+    height: 350px;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-red);
+}
+
+.img-container {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.img:hover {
+    transform: scale(1.05);
+}
+
+.name {
+    margin: 10px 0 5px;
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 1.2rem;
+}
+
+.price {
+    margin: 5px 0;
+    color: var(--primary-red);
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+.view-btn {
+    background-color: var(--primary-red);
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    color: var(--text-light);
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 600;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.view-btn:hover {
+    background-color: var(--dark-red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(167, 17, 17, 0.3);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 240px;
+    }
+    
+    .main-content {
+        margin-left: 240px;
+    }
+    
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        top: 0;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .container {
+        grid-template-columns: 1fr;
+    }
+}

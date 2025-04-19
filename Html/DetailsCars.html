@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details | Car Marketplace</title>
+    <link rel="stylesheet" href="../css/DetailsCars.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../Javascript/CarDetails.js" defer></script>
+</head>
+<body>
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="MainPage.html">Home</a></li>
+            <li><a href="new_cars.html">New Cars</a></li>
+            <li><a href="used_cars.html">Used Cars</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="/Mercedes/register.html">Register</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="car-header">
+            <div class="car-title">
+                <h1>[Year] [Make] [Model]</h1>
+                <p>[Price]</p>
+            </div>
+            <div class="car-id">Stock #: [StockNumber] • VIN: [VIN]</div>
+        </div>
+        
+        <div class="car-content">
+            <div class="gallery">
+                <img src="[MainImageURL]" 
+                     alt="[Make] [Model]" class="main-image" id="mainImage">
+                
+                <div class="thumbnail-container">
+                    <img src="[Thumbnail1URL]" 
+                         alt="Front view" class="thumbnail" onclick="changeImage(this)">
+                    <img src="[Thumbnail2URL]" 
+                         alt="Interior view" class="thumbnail" onclick="changeImage(this)">
+                    <img src="[Thumbnail3URL]" 
+                         alt="Side view" class="thumbnail" onclick="changeImage(this)">
+                    <img src="[Thumbnail4URL]" 
+                         alt="Dashboard" class="thumbnail" onclick="changeImage(this)">
+                </div>
+            </div>
+            
+            <div class="details-section">
+                <h2 class="section-title">Vehicle Details</h2>
+                
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Make</div>
+                        <div>[Make]</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Model</div>
+                        <div>[Model]</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Year</div>
+                        <div>[Year]</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Mileage</div>
+                        <div>[Mileage]</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Transmission</div>
+                        <div>[Transmission]</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Engine</div>
+                        <div>[Engine]</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Drivetrain</div>
+                        <div>[Drivetrain]</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Exterior Color</div>
+                        <div>[ExteriorColor]</div>
+                    </div>
+                </div>
+                
+                <h2 class="section-title">Premium Features</h2>
+                <ul class="features-list">
+                    <li><i class="fas fa-sun"></i> [Feature 1]</li>
+                    <li><i class="fas fa-chair"></i> [Feature 2]</li>
+                    <li><i class="fas fa-mobile-alt"></i> [Feature 3]</li>
+                    <li><i class="fas fa-camera"></i> [Feature 4]</li>
+                    <li><i class="fas fa-car"></i> [Feature 5]</li>
+                    <li><i class="fas fa-eye"></i> [Feature 6]</li>
+                    <li><i class="fas fa-volume-up"></i> [Feature 7]</li>
+                    <li><i class="fas fa-lightbulb"></i> [Feature 8]</li>
+                </ul>
+                
+                <div class="seller-card">
+                    <img src="[SellerImageURL]" alt="Seller" class="seller-avatar">
+                    <div class="seller-info">
+                        <h4>[SellerName] <span class="seller-verified">✓ Verified</span></h4>
+                        <div class="seller-rating">★★★★★ ([Rating]) • [ReviewCount] Reviews</div>
+                        <div>[DealerType]</div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="contactBtn">
+                        <i class="fas fa-phone-alt"></i> Contact Seller
+                    </button>
+                    <button class="btn btn-outline" id="testDriveBtn">
+                        <i class="fas fa-calendar-alt"></i> Schedule Test Drive
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Javascript/CarDetails.js"></script>    
+    <script src="../Javascript/search.js"></script>
+</body>
+</html>

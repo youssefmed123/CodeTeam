@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find your perfect car with our comprehensive marketplace. Browse new and used cars, sell your vehicle, and get insurance quotes.">
+    <meta name="keywords" content="cars, car marketplace, used cars, new cars, car insurance">
+    <title>Car Marketplace - Find Your Perfect Vehicle</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/MainPage.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <script src="../Javascript/MainPage.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="/" aria-label="Car Marketplace Home">
+                <img src="/Photos/LogoWeb.jpg" alt="Car Marketplace Logo">
+                <div class="logo-text">CAR4U</div>
+            </a>
+        </div>
+        <form role="search" class="search-form" action="/search.html" method="GET">
+            <label for="search-input" class="visually-hidden">Search cars</label>
+            <input type="search" id="search-input" name="q" class="search-bar" placeholder="Search cars..." aria-label="Search cars">
+            <button type="submit" aria-label="Submit search">Search</button>
+        </form>
+    </header>
+    
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="MainPage.html" aria-current="page">Home</a></li>
+            <li><a href="new_cars.html">New Cars</a></li>
+            <li><a href="used_cars.html">Used Cars</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="/Mercedes/register.html">Register</a></li>
+        </ul>
+        <div class="nav-icons">
+            <a href="https://facebook.com" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+    
+    <main>
+        <section class="hero-slider" aria-label="Special Deals">
+            <div class="slider-container">
+                <div class="slide active">
+                    <img src="/Photos/Deal1.avif" alt="Special Car Deal - Limited Time Offer">
+                    <div class="slide-content">
+                        <h2>Special Deal of the Week</h2>
+                        <p>Get up to 20% off on selected vehicles</p>
+                        <a href="sell.car.html" class="slider-cta">View Deals</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="/Photos/Deal2.webp" alt="New Arrivals - Latest Models">
+                    <div class="slide-content">
+                        <h2>New Arrivals</h2>
+                        <p>Check out our latest 2024 models</p>
+                        <a href="sell.car.html" class="slider-cta">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-nav prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-nav next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+            <div class="slider-dots"></div>
+        </section>
+
+        <section class="categories" aria-labelledby="categories-heading">
+            <h2 id="categories-heading" class="visually-hidden">Browse Categories</h2>
+            <div class="category-grid">
+                <a href="used_cars.html" class="category-box" role="button">
+                    <i class="fas fa-car"></i>
+                    <span class="category-title">Used Cars</span>
+                    <span class="category-description">Browse our selection of quality used vehicles</span>
+                    <span class="category-button">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="new_cars.html" class="category-box" role="button">
+                    <i class="fas fa-car-on"></i>
+                    <span class="category-title">New Cars</span>
+                    <span class="category-description">Explore our latest models</span>
+                    <span class="category-button">Discover <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="sell.car.html" class="category-box" role="button">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span class="category-title">Sell Your Car</span>
+                    <span class="category-description">Get the best value for your vehicle</span>
+                    <span class="category-button">Sell Now <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="all-cars.html" class="category-box" role="button">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span class="category-title">Explore All Cars</span>
+                    <span class="category-button">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
+        
+        <section class="brands" aria-labelledby="brands-heading">
+            <h2 id="brands-heading">Popular Car Brands</h2>
+            <ul class="brand-list">
+                <a href="Mercedes Benz .html" class="brand-logo">
+                    <img src="https://imgs.search.brave.com/pZ4t5Vez3wBrWuHFkwQVJvUPJ6PX5Ftx_edkk24Ahyk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2ZjL2Fj/LzZhL2ZjYWM2YTU2/YWNmMDA4ZGMwNjg3/YmFmMmVkNjdhNzM0/LmpwZw" alt="Mercedes-Benz" width="100" height="40">
+                </a>
+                <a href="hyundai.html" class="brand-logo">
+                    <img src="https://i.pinimg.com/originals/2f/3b/f9/2f3bf9f0ea31ffd6008db72fef359b2a.jpg" alt="Hyundai" width="100" height="40">
+                </a>
+                <a href="toyota.html" class="brand-logo">
+                    <img src="/Photos/ToyotaLogo.png" alt="Toyota" width="100" height="40">
+                </a>
+                <a href="nissan.html" class="brand-logo">
+                    <img src="/Photos/NissanLogo.png" alt="Nissan" width="100" height="40">
+                </a>
+            </ul>
+        </section>
+        
+        <section class="insurance" aria-labelledby="insurance-heading">
+            <h2 id="insurance-heading">Insurance Policy</h2>
+            <div class="insurance-content">
+                <div class="insurance-text">
+                    <p>Get comprehensive coverage for your vehicle with our trusted insurance partners.</p>
+                    <ul class="insurance-features">
+                        <li><i class="fas fa-check-circle"></i> 24/7 Roadside Assistance</li>
+                        <li><i class="fas fa-check-circle"></i> Zero Depreciation Cover</li>
+                        <li><i class="fas fa-check-circle"></i> Cashless Claims</li>
+                        <li><i class="fas fa-check-circle"></i> Personal Accident Cover</li>
+                    </ul>
+                    <a href="/insurance" class="cta-button">Get Insurance Quote</a>
+                </div>
+                <div class="insurance-partners">
+                    <h3>Our Insurance Partners</h3>
+                    <div class="insurance-logos">
+                        <div class="insurance-logo">
+                            <img src="/Photos/insurance1.png" alt="Mercury Insurance" width="150" height="50">
+                        </div>
+                        <div class="insurance-logo">
+                            <img src="/Photos/insurance2.png" alt="GoldenStar Insurance" width="150" height="50">
+                        </div>
+                        <div class="insurance-logo">
+                            <img src="/Photos/insurance3.png" alt="Genius stack Insurance" width="150" height="50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="featured-cars" aria-labelledby="featured-cars-heading">
+            <h2 id="featured-cars-heading">Featured Vehicles</h2>
+            <div class="car-grid">
+                <article class="car-item">
+                    <img src="/Photos/img1.webp" alt="2023 Hyundai Elantra - Silver" width="300" height="200">
+                    <div class="car-details">
+                        <h3>2023 Hyundai Elantra</h3>
+                        <p class="price">$20,000</p>
+                        <a href="/DetailsCars.html?id=1" class="view-details">View Details</a>
+                    </div>
+                </article>
+                <article class="car-item">
+                    <img src="/Photos/car2.webp" alt="2023 Toyota Camry - Black" width="300" height="300">
+                    <div class="car-details">
+                        <h3>2023 Toyota Camry</h3>
+                        <p class="price">$25,000</p>
+                        <a href="/DetailsCars.html?id=2" class="view-details">View Details</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <section class="partners" aria-labelledby="partners-heading">
+            <h2 id="partners-heading">Our Trusted Partners</h2>
+            <div class="partner-logos">
+                <img src="/Photos/PartnerLogo1.avif" alt="Mercury" width="100" height="40">
+                <img src="/Photos/PartnerLogo2.jpg" alt="GoldenStar" width="100" height="40">
+                <img src="/Photos/PartnerLogo3.jpg" alt="GeniusStack" width="100" height="40">   
+            </div>
+        </section>
+    </main>
+    
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <address>
+                    <p>Email: <a href="mailto:contact@carwebsite.com">contact@carwebsite.com</a></p>
+                    <p>Phone: <a href="tel:1234567890">123-456-7890</a></p>
+                    <p>Address: 123 Car Street, City, State 12345</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Car Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+        <script src="../Javascript/search.js"></script>
+</body>
+</html>

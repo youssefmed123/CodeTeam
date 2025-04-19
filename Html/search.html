@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search and filter cars based on your preferences">
+    <title>Search Cars - Car Marketplace</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/MainPage.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo" role="banner">
+            <a href="../Html/MainPage.html" aria-label="Car Marketplace Home">
+                <img src="/Photos/LogoWeb.jpg" alt="Car Marketplace Logo" width="150" height="50">
+            </a>
+        </div>
+        <form role="search" class="search-form">
+            <label for="search-input" class="visually-hidden">Search cars</label>
+            <input type="search" id="search-input" class="search-bar" placeholder="Search cars..." aria-label="Search cars">
+            <button type="submit" aria-label="Submit search">Search</button>
+        </form>
+    </header>
+    
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="MainPage.html">Home</a></li>
+            <li><a href="new_cars.html">New Cars</a></li>
+            <li><a href="used_cars.html">Used Cars</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <main class="search-page">
+        <aside class="filters-sidebar">
+            <h2>Filters</h2>
+            <form class="filter-form">
+                <div class="filter-section">
+                    <h3>Car Type</h3>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" value="used"> Used Cars
+                        </label>
+                        <label>
+                            <input type="checkbox" value="new"> New Cars
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Price Range</h3>
+                    <div class="price-range">
+                        <div class="range-input">
+                            <label for="min-price">Min Price</label>
+                            <input type="number" id="min-price" min="0" step="1000">
+                        </div>
+                        <div class="range-input">
+                            <label for="max-price">Max Price</label>
+                            <input type="number" id="max-price" min="0" step="1000">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Year</h3>
+                    <div class="year-range">
+                        <input type="number" id="min-year" placeholder="From" min="1900" max="2024">
+                        <span>to</span>
+                        <input type="number" id="max-year" placeholder="To" min="1900" max="2024">
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Brand</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="mercedes"> Mercedes-Benz</label>
+                        <label><input type="checkbox" value="hyundai"> Hyundai</label>
+                        <label><input type="checkbox" value="toyota"> Toyota</label>
+                        <label><input type="checkbox" value="nissan"> Nissan</label>
+                        <label><input type="checkbox" value="honda"> Honda</label>
+                        <label><input type="checkbox" value="ford"> Ford</label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Transmission</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="automatic"> Automatic</label>
+                        <label><input type="checkbox" value="manual"> Manual</label>
+                        <label><input type="checkbox" value="cvt"> CVT</label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Fuel Type</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="petrol"> Petrol</label>
+                        <label><input type="checkbox" value="diesel"> Diesel</label>
+                        <label><input type="checkbox" value="electric"> Electric</label>
+                        <label><input type="checkbox" value="hybrid"> Hybrid</label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Features</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="leather"> Leather Seats</label>
+                        <label><input type="checkbox" value="sunroof"> Sunroof</label>
+                        <label><input type="checkbox" value="navigation"> Navigation</label>
+                        <label><input type="checkbox" value="backup-camera"> Backup Camera</label>
+                        <label><input type="checkbox" value="bluetooth"> Bluetooth</label>
+                    </div>
+                </div>
+
+                <button class="apply-filters">Apply Filters</button>
+                <button class="clear-filters">Clear All</button>
+            </form>
+        </aside>
+
+        <section class="search-results">
+            <div class="search-header">
+                <div class="search-info">
+                    <h2>Search Results</h2>
+                    <p>Showing <span id="result-count">24</span> results</p>
+                </div>
+                <div class="sort-options">
+                    <select id="sort-by" aria-label="Sort by">
+                        <option value="relevance">Relevance</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="year-new">Year: Newest First</option>
+                        <option value="year-old">Year: Oldest First</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="active-filters">
+                <div class="filter-tags">
+                    <span class="filter-tag">Price: $20,000 - $30,000 <i class="fas fa-times"></i></span>
+                    <span class="filter-tag">Year: 2020-2024 <i class="fas fa-times"></i></span>
+                    <span class="filter-tag">Brand: Hyundai <i class="fas fa-times"></i></span>
+                    <span class="filter-tag">Transmission: Automatic <i class="fas fa-times"></i></span>
+                    <span class="filter-tag">Fuel: Petrol <i class="fas fa-times"></i></span>
+                </div>
+                <button class="clear-all">Clear All</button>
+            </div>
+
+            <div class="car-grid">
+                <article class="car-item">
+                    <img src="/Photos/img1.webp" alt="2023 Hyundai Elantra - Silver" width="200" height="100">
+                    <div class="car-details">
+                        <h3>2023 Hyundai Elantra</h3>
+                        <p class="price">$20,000</p>
+                        <a href="/DetailsCars.html?id=${car.id}" class="view-details">View Details</a>
+                    </div>
+                </article>
+                <article class="car-item">
+                    <img src="/Photos/car2.webp" alt="2023 Toyota Camry - Black" width="300" height="300">
+                    <div class="car-details">
+                        <h3>2023 Toyota Camry</h3>
+                        <p class="price">$25,000</p>
+                        <a href="/DetailsCars.html?id=${car.id}" class="view-details">View Details</a>
+                    </div>
+                </article>
+                <article class="car-item">
+                    <img src="/Photos/img1.webp" alt="2023 Nissan Altima - White" width="300" height="200">
+                    <div class="car-details">
+                        <h3>2023 Nissan Altima</h3>
+                        <p class="price">$22,000</p>
+                        <a href="/DetailsCars.html?id=${car.id}" class="view-details">View Details</a>
+                    </div>
+                </article>
+                <article class="car-item">
+                    <img src="/Photos/car2.webp" alt="2023 Honda Civic - Blue" width="300" height="300">
+                    <div class="car-details">
+                        <h3>2023 Honda Civic</h3>
+                        <p class="price">$21,000</p>
+                        <a href="/DetailsCars.html?id=${car.id}" class="view-details">View Details</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="pagination">
+                <button class="prev-page" disabled aria-label="Previous page"><i class="fas fa-chevron-left"></i></button>
+                <div class="page-numbers">
+                    <span class="active">1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>...</span>
+                    <span>10</span>
+                </div>
+                <button class="next-page" aria-label="Next page"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <address>
+                    <p>Email: <a href="mailto:contact@carwebsite.com">contact@carwebsite.com</a></p>
+                    <p>Phone: <a href="tel:1234567890">123-456-7890</a></p>
+                    <p>Address: 123 Car Street, City, State 12345</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Car Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../Javascript/search.js"></script>
+    <script src="../Javascript/CarDetails.js"></script>
+</body>
+</html> 

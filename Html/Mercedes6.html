@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 Mercedes-Benz GLS | Car Marketplace</title>
+    <link rel="stylesheet" href="../css/Mercedes 6.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/styleDetailsCars.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="MainPage.html">Home</a></li>
+            <li><a href="used_cars.html">Used Cars</a></li>
+            <li><a href="new_cars.html">New Cars</a></li>
+            <li><a href="sell.car.html">Sell Your Car</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="car-header">
+            <div class="car-title">
+                <h1>2023 Mercedes-Benz GLS</h1>
+                <p>$85,000</p>
+            </div>
+            <div class="car-id">Stock #: MB-GLS-2023 • VIN: WDDZF4KB3PA123461</div>
+        </div>
+        
+        <div class="car-content">
+            <div class="gallery">
+                <img src="/Photos/Mercedes/GLS.jpg" 
+                     alt="2023 Mercedes-Benz GLS" class="main-image" id="mainImage">
+                
+                <div class="thumbnail-container">
+                    <img src="/Photos/Mercedes/GLS-1.jpg" 
+                         alt="Front view" class="thumbnail" onclick="changeImage(this)">
+                    <img src="/Photos/Mercedes/GLS-2.jpg" 
+                         alt="Interior view" class="thumbnail" onclick="changeImage(this)">
+                    <img src="/Photos/Mercedes/GLS-3.jpg" 
+                         alt="Side view" class="thumbnail" onclick="changeImage(this)">
+                    <img src="/Photos/Mercedes/GLS-4.jpg" 
+                         alt="Dashboard" class="thumbnail" onclick="changeImage(this)">
+                </div>
+            </div>
+            
+            <div class="details-section">
+                <h2 class="section-title">Vehicle Details</h2>
+                
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Make</div>
+                        <div>Mercedes-Benz</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Model</div>
+                        <div>GLS</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Year</div>
+                        <div>2023</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Mileage</div>
+                        <div>0 Miles</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Transmission</div>
+                        <div>9-Speed Automatic</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Engine</div>
+                        <div>3.0L 6-Cylinder</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Drivetrain</div>
+                        <div>4MATIC All-Wheel Drive</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Exterior Color</div>
+                        <div>Obsidian Black</div>
+                    </div>
+                </div>
+                
+                <h2 class="section-title">Premium Features</h2>
+                <ul class="features-list">
+                    <li><i class="fas fa-chair"></i> Nappa Leather Seats</li>
+                    <li><i class="fas fa-sun"></i> Panoramic Sunroof</li>
+                    <li><i class="fas fa-map-marker-alt"></i> MBUX Navigation</li>
+                    <li><i class="fas fa-camera"></i> 360° Camera</li>
+                    <li><i class="fas fa-bluetooth"></i> Wireless Charging</li>
+                    <li><i class="fas fa-car"></i> Active Parking Assist</li>
+                    <li><i class="fas fa-eye"></i> Driver Assistance Package</li>
+                    <li><i class="fas fa-volume-up"></i> Burmester® 3D Sound System</li>
+                </ul>
+                
+                <div class="seller-card">
+                    <img src="/Photos/Mercedes/Dealer.jpg" alt="Mercedes-Benz Dealer" class="seller-avatar">
+                    <div class="seller-info">
+                        <h4>Mercedes-Benz Dealership <span class="seller-verified">✓ Verified</span></h4>
+                        <div class="seller-rating">★★★★★ (4.9) • 1,234 Reviews</div>
+                        <div>Authorized Dealer</div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="contactBtn">
+                        <i class="fas fa-phone-alt"></i> Contact Dealer
+                    </button>
+                    <button class="btn btn-outline" id="testDriveBtn">
+                        <i class="fas fa-calendar-alt"></i> Schedule Test Drive
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Javascript/CarDetails.js"></script>
+</body>
+</html> 

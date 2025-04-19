@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 Mercedes-Benz C-Class | Car Marketplace</title>
+    <link rel="stylesheet" href="../css/Mercedes1.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/styleDetailsCars.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="MainPage.html">Home</a></li>
+            <li><a href="used_cars.html">Used Cars</a></li>
+            <li><a href="new_cars.html">New Cars</a></li>
+            <li><a href="sell.car.html">Sell Your Car</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="car-header">
+            <div class="car-title">
+                <h1>2023 Mercedes-Benz C-Class</h1>
+                <p>$45,000</p>
+            </div>
+            
+        
+        <div class="car-content">
+            <div class="gallery">
+                <img src="https://postcdn.haraj.com.sa/userfiles30/2025-04-01/1179x777_57DD0FD6-A918-4D0C-84DE-30660DF5385A.jpg/900/webp" 
+                     alt="2023 Mercedes-Benz C-Class" class="main-image" id="mainImage">
+                
+                <div class="thumbnail-container">
+                    <img src="https://postcdn.haraj.com.sa/userfiles30/2025-04-01/1179x790_5E23F06A-B41F-4600-928C-B0653C3D9FFE.jpg/900/webp" 
+                         alt="Front view" class="thumbnail" onclick="changeImage(this)">
+                    <img src="https://postcdn.haraj.com.sa/userfiles30/2025-04-01/1179x808_15504049-CA2D-4894-97A6-4E5B0C27C211.jpg/900/webp" 
+                         alt="Interior view" class="thumbnail" onclick="changeImage(this)">
+                    <img src="https://postcdn.haraj.com.sa/userfiles30/2025-04-01/1179x796_CBE2D890-4E32-4CE5-9B16-06460E019190.jpg/900/webp" 
+                         alt="Side view" class="thumbnail" onclick="changeImage(this)">
+                    <img src="https://postcdn.haraj.com.sa/userfiles30/2025-04-01/1179x802_BB6CF2D2-D513-4D75-8A21-DEAD2F368132.jpg/900/webp" 
+                         alt="Dashboard" class="thumbnail" onclick="changeImage(this)">
+                </div>
+            </div>
+            
+            <div class="details-section">
+                <h2 class="section-title">Vehicle Details</h2>
+                
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Make</div>
+                        <div>Mercedes-Benz</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Model</div>
+                        <div>C-Class</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Year</div>
+                        <div>2023</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Mileage</div>
+                        <div>0 Miles</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Transmission</div>
+                        <div>9-Speed Automatic</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Engine</div>
+                        <div>2.0L 4-Cylinder</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Drivetrain</div>
+                        <div>Rear-Wheel Drive</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Exterior Color</div>
+                        <div>Polar White</div>
+                    </div>
+                </div>
+                
+                <h2 class="section-title">Premium Features</h2>
+                <ul class="features-list">
+                    <li> Leather Seats</li>
+                    <li> Panoramic Sunroof</li>
+                    <li> Navigation System</li>
+                    <li> 360° Camera</li>
+                    <li> Bluetooth Connectivity</li>
+                    <li> Parking Assist</li>
+                    <li> Blind Spot Monitoring</li>
+                    <li> Burmester® Sound System</li>
+                </ul>
+                
+                <div class="seller-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAaxI48kwLWSQsBw3eiJc23IBr-z6GNNvZ0A&s" alt="Seller" class="seller-avatar" alt="Mercedes-Benz Dealer" class="seller-avatar">
+                    <div class="seller-info">
+                        <h4>Mercedes-Benz Dealership <span class="seller-verified">✓ Verified</span></h4>
+                        
+                        <div>Authorized Dealer</div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="contactBtn">
+                        <i class="fas fa-phone-alt"></i> Contact Dealer
+                    </button>
+                    <button class="btn btn-outline" id="testDriveBtn">
+                        <i class="fas fa-calendar-alt"></i> Schedule Test Drive
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Javascript/CarDetails.js"></script>
+</body>
+</html>

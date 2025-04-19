@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل بيع السيارات | CarSell Registration</title>
+    <style>
+        :root {
+            --primary-color: #e74c3c;
+            --primary-dark: #c0392b;
+            --text-color: #2c3e50;
+            --bg-color: #f8f9fa;
+            --card-color: #ffffff;
+            --border-color: #ddd;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --secondary-text: #7f8c8d;
+            --link-color: #3498db;
+        }
+
+        .dark-mode {
+            --primary-color: #e74c3c;
+            --primary-dark: #c0392b;
+            --text-color: #ecf0f1;
+            --bg-color: #121212;
+            --card-color: #1e1e1e;
+            --border-color: #333;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --secondary-text: #bdc3c7;
+            --link-color: #3498db;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Main container with perfect scrolling */
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 100vw;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Scrollable content area */
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+
+        /* Form container with strict boundaries */
+        .registration-container {
+            background-color: var(--card-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        /* Car background that stays in place */
+        .car-background {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: url('https://i.imgur.com/KbQ0XgK.png') center bottom no-repeat;
+            background-size: contain;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        /* Header styles */
+        .form-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-header h1 {
+            color: var(--primary-color);
+            margin: 0 0 10px;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .form-header p {
+            color: var(--secondary-text);
+            margin: 0;
+            font-size: 16px;
+        }
+
+        /* Form elements with proper spacing */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: var(--card-color);
+            color: var(--text-color);
+        }
+
+        /* Footer section */
+        .form-footer {
+            margin-top: 25px;
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .register-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+            color: var(--secondary-text);
+        }
+
+        /* Control buttons */
+        .controls {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            color: var(--text-color);
+            font-size: 16px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .registration-container {
+                padding: 25px;
+            }
+            
+            .form-header h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .registration-container {
+                padding: 20px;
+            }
+            
+            .controls {
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="controls">
+            <button class="control-btn" id="darkModeToggle">🌓</button>
+            <button class="control-btn" id="languageToggle">ع/EN</button>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="registration-container">
+                <div class="form-header">
+                    <h1 id="formTitle">🚗 بيع وشراء السيارات</h1>
+                    <p id="formSubtitle">سجل حسابك للبدء</p>
+                </div>
+                
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="firstName" id="firstNameLabel">الاسم الأول</label>
+                        <input type="text" id="firstName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName" id="lastNameLabel">الاسم الأخير</label>
+                        <input type="text" id="lastName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" id="emailLabel">البريد الإلكتروني</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" id="passwordLabel">كلمة المرور</label>
+                        <input type="password" id="password" required minlength="6">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword" id="confirmPasswordLabel">تأكيد كلمة المرور</label>
+                        <input type="password" id="confirmPassword" required>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <button type="submit" class="register-btn" id="registerBtn">تسجيل الآن</button>
+                        <div class="login-link">
+                            <span id="haveAccount">هل لديك حساب بالفعل؟</span>
+                            <a href="/Login.html" id="loginLink">سجل الدخول هنا</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="car-background"></div>
+    </div>
+
+    <script>
+        // Language content
+        const translations = {
+            en: {
+                title: "🚗 Sell/Buy Cars",
+                subtitle: "Register your account to begin",
+                firstName: "First Name",
+                lastName: "Last Name",
+                email: "Email",
+                password: "Password",
+                confirmPassword: "Confirm Password",
+                register: "REGISTER NOW",
+                haveAccount: "Already have an account?",
+                login: "Login here"
+            },
+            ar: {
+                title: "🚗 بيع وشراء السيارات",
+                subtitle: "سجل حسابك للبدء",
+                firstName: "الاسم الأول",
+                lastName: "الاسم الأخير",
+                email: "البريد الإلكتروني",
+                password: "كلمة المرور",
+                confirmPassword: "تأكيد كلمة المرور",
+                register: "تسجيل الآن",
+                haveAccount: "هل لديك حساب بالفعل؟",
+                login: "سجل الدخول هنا"
+            }
+        };
+
+        // Toggle dark mode
+        document.getElementById('darkModeToggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Toggle language
+        document.getElementById('languageToggle').addEventListener('click', () => {
+            const currentLang = document.documentElement.lang === 'ar' ? 'en' : 'ar';
+            switchLanguage(currentLang);
+        });
+
+        // Language switching function
+        function switchLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            document.getElementById('formTitle').textContent = translations[lang].title;
+            document.getElementById('formSubtitle').textContent = translations[lang].subtitle;
+            document.getElementById('firstNameLabel').textContent = translations[lang].firstName;
+            document.getElementById('lastNameLabel').textContent = translations[lang].lastName;
+            document.getElementById('emailLabel').textContent = translations[lang].email;
+            document.getElementById('passwordLabel').textContent = translations[lang].password;
+            document.getElementById('confirmPasswordLabel').textContent = translations[lang].confirmPassword;
+            document.getElementById('registerBtn').textContent = translations[lang].register;
+            document.getElementById('haveAccount').textContent = translations[lang].haveAccount;
+            document.getElementById('loginLink').textContent = translations[lang].login;
+            
+            localStorage.setItem('language', lang);
+        }
+
+        // Initialize
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        
+        const savedLang = localStorage.getItem('language') || 'ar';
+        switchLanguage(savedLang);
+
+        // Form validation
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const isArabic = document.documentElement.lang === 'ar';
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert(isArabic ? "كلمات المرور غير متطابقة!" : "Passwords don't match!");
+                return;
+            }
+            
+            alert(isArabic ? "تم التسجيل بنجاح!" : "Registration successful!");
+        });
+    </script>
+</body>
+</html>

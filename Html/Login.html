@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | CarSell Login</title>
+    <style>
+        :root {
+            --primary-color: #e74c3c;
+            --primary-dark: #c0392b;
+            --text-color: #2c3e50;
+            --bg-color: #f8f9fa;
+            --card-color: #ffffff;
+            --border-color: #ddd;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --secondary-text: #7f8c8d;
+            --link-color: #3498db;
+        }
+
+        .dark-mode {
+            --primary-color: #e74c3c;
+            --primary-dark: #c0392b;
+            --text-color: #ecf0f1;
+            --bg-color: #121212;
+            --card-color: #1e1e1e;
+            --border-color: #333;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --secondary-text: #bdc3c7;
+            --link-color: #3498db;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Main container with perfect scrolling */
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 100vw;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Scrollable content area */
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+
+        /* Form container with strict boundaries */
+        .login-container {
+            background-color: var(--card-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        /* Car background that stays in place */
+        .car-background {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: url('https://i.imgur.com/KbQ0XgK.png') center bottom no-repeat;
+            background-size: contain;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        /* Header styles */
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h1 {
+            color: var(--primary-color);
+            margin: 0 0 10px;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .form-header p {
+            color: var(--secondary-text);
+            margin: 0;
+            font-size: 16px;
+        }
+
+        /* Form elements with proper spacing */
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: var(--card-color);
+            color: var(--text-color);
+        }
+
+        .form-group i {
+            position: absolute;
+            top: 38px;
+            right: 15px;
+            color: var(--secondary-text);
+        }
+
+        /* Options row */
+        .options-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+
+        .remember-me input {
+            margin-left: 8px;
+        }
+
+        .forgot-password {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        /* Login button */
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .login-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Register link */
+        .register-link {
+            text-align: center;
+            color: var(--secondary-text);
+        }
+
+        .register-link a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Control buttons */
+        .controls {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            color: var(--text-color);
+            font-size: 16px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .login-container {
+                padding: 30px;
+            }
+            
+            .form-header h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .login-container {
+                padding: 25px;
+            }
+            
+            .controls {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .options-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        /* Loading Tajawal font for Arabic */
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="controls">
+            <button class="control-btn" id="darkModeToggle">🌓</button>
+            <button class="control-btn" id="languageToggle">ع/EN</button>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="login-container">
+                <div class="form-header">
+                    <h1 id="formTitle">🚗 مرحباً بعودتك</h1>
+                    <p id="formSubtitle">سجل الدخول لإدارة عروض السيارات الخاصة بك</p>
+                </div>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email" id="emailLabel">البريد الإلكتروني</label>
+                        <input type="email" id="email" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" id="passwordLabel">كلمة المرور</label>
+                        <input type="password" id="password" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    
+                    <div class="options-row">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember">
+                            <label for="remember" id="rememberLabel">تذكرني</label>
+                        </div>
+                        <a href="#" class="forgot-password" id="forgotPassword">نسيت كلمة المرور؟</a>
+                    </div>
+                    
+                    <button type="submit" class="login-btn" id="loginBtn">تسجيل الدخول</button>
+                    
+                    <div class="register-link">
+                        <span id="noAccount">ليس لديك حساب؟</span>
+                        <a href="/Mercedes/register.html" id="registerLink">سجل الآن</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="car-background"></div>
+    </div>
+
+    <script>
+        // Language content
+        const translations = {
+            en: {
+                title: "🚗 Welcome Back",
+                subtitle: "Login to manage your car listings",
+                email: "Email",
+                password: "Password",
+                remember: "Remember me",
+                forgotPassword: "Forgot password?",
+                login: "LOGIN",
+                noAccount: "Don't have an account?",
+                register: "Register now"
+            },
+            ar: {
+                title: "🚗 مرحباً بعودتك",
+                subtitle: "سجل الدخول لإدارة عروض السيارات الخاصة بك",
+                email: "البريد الإلكتروني",
+                password: "كلمة المرور",
+                remember: "تذكرني",
+                forgotPassword: "نسيت كلمة المرور؟",
+                login: "تسجيل الدخول",
+                noAccount: "ليس لديك حساب؟",
+                register: "سجل الآن"
+            }
+        };
+
+        // Toggle dark mode
+        document.getElementById('darkModeToggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Toggle language
+        document.getElementById('languageToggle').addEventListener('click', () => {
+            const currentLang = document.documentElement.lang === 'ar' ? 'en' : 'ar';
+            switchLanguage(currentLang);
+        });
+
+        // Language switching function
+        function switchLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            document.getElementById('formTitle').textContent = translations[lang].title;
+            document.getElementById('formSubtitle').textContent = translations[lang].subtitle;
+            document.getElementById('emailLabel').textContent = translations[lang].email;
+            document.getElementById('passwordLabel').textContent = translations[lang].password;
+            document.getElementById('rememberLabel').textContent = translations[lang].remember;
+            document.getElementById('forgotPassword').textContent = translations[lang].forgotPassword;
+            document.getElementById('loginBtn').textContent = translations[lang].login;
+            document.getElementById('noAccount').textContent = translations[lang].noAccount;
+            document.getElementById('registerLink').textContent = translations[lang].register;
+            
+            localStorage.setItem('language', lang);
+        }
+
+        // Initialize
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        
+        const savedLang = localStorage.getItem('language') || 'ar';
+        switchLanguage(savedLang);
+
+        // Form validation
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const isArabic = document.documentElement.lang === 'ar';
+            
+            if (!email || !password) {
+                alert(isArabic ? "الرجاء ملء جميع الحقول!" : "Please fill in all fields!");
+                return;
+            }
+            
+            // Simulate login process
+            const btn = document.getElementById('loginBtn');
+            btn.disabled = true;
+            btn.textContent = isArabic ? "جاري تسجيل الدخول..." : "Logging in...";
+            
+            setTimeout(() => {
+                alert(isArabic ? "تم تسجيل الدخول بنجاح!" : "Login successful!");
+                btn.disabled = false;
+                btn.textContent = translations[document.documentElement.lang].login;
+                // window.location.href = "dashboard.html";
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
